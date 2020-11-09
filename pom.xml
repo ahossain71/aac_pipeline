@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.devops</groupId>
-  <artifactId>devops-git-integration</artifactId>
+  <groupId>com.amitverma</groupId>
+  <artifactId>jenkins-git-integration</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
-  <name>devops-git-integration Maven Webapp</name>
+  <name>jenkins-git-integration Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
@@ -16,6 +16,6 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>devops-git-integration</finalName>
+    <finalName>jenkins-git-integration</finalName>
   </build>
 </project>
