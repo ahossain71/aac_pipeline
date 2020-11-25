@@ -12,4 +12,4 @@
         mode: 0644
       handlers:
     - name: check the status of httpd service ...
-        service: name="httpd" state="service_status"
+      service: name="httpd" state="service_status"
