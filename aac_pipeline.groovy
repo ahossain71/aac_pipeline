@@ -7,10 +7,10 @@ pipeline {
         git url: 'https://github.com/ahossain71/aac_pipeline.git'
         }
     }
-    stage('build souce'){
-      steps{
+    //stage('build souce'){
+    //  steps{
         //mvn package
-      }
-    }
+    //  }
+    //}
   }
 }
