@@ -2,14 +2,14 @@
 pipeline {
   agent any
   stages {
-    stage('clone sources') { 
+    stage('clone sources'){ 
       steps {
         git url: 'https://github.com/ahossain71/aac_pipeline.git'
         }
     }
-    stage('build souce') {
+    stage('build souce'){
       steps{
-        mvn package
+        //mvn package
       }
     }
   }
