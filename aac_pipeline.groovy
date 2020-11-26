@@ -9,7 +9,8 @@ pipeline {
     }
     stage('build souce') {
       steps{
-        //mvn package
+        mvn package
       }
+    }
   }
 }
