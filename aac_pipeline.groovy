@@ -2,9 +2,9 @@
 pipeline {
   agent any
   stages {
-    stage('clone sources'){ 
+    stage('checkout'){ 
       steps {
-        git url: 'https://github.com/ahossain71/aac_pipeline.git'
+        git branch: 'main', url: 'https://github.com/ahossain71/aac_pipeline.git'
         }
     }
     //stage('build souce'){
