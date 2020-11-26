@@ -3,7 +3,7 @@
   vars:
     http_port: 80
     max_client: 200
-  remote_user: root
+  remote_user: ec2-user
    
   tasks:
     - name: replace default index.html file
