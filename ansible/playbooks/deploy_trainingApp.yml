@@ -1,5 +1,5 @@
 ---
-- hosts: ec2-54-90-176-195.compute-1.amazonaws.com
+- hosts: 54.90.176.195
   vars:
     http_port: 80
     max_client: 200
