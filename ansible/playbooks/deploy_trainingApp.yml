@@ -1,5 +1,5 @@
 ---
-- hosts: trainingweb
+- hosts: ec2-54-90-176-195.compute-1.amazonaws.com
   vars:
     http_port: 80
     max_client: 200
