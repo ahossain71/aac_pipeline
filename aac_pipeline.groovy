@@ -2,9 +2,9 @@
 pipeline {
   agent any
   stages {
-    stage('checkout'){ 
+    stage('checkout_application'){ 
       steps {
-        git branch: 'main', url: 'https://github.com/ahossain71/aac_pipeline.git'
+        git branch: 'main', url: 'https://github.com/ahossain71/trainingApp.git'
         }
     }
     //stage('build souce'){
