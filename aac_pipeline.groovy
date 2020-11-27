@@ -31,7 +31,9 @@ pipeline {
         }
     stage('Ansible Deploy') {
         steps {
-            sh "ansible-playbook deploy_trainingApp.yml -i inventories/dev/hosts:trainingweb -- user jenkins --key-file ~/.ssh/DevOpsKeyPair"
+            //sh "ansible-playbook deploy_trainingApp.yml -i inventories/dev/hosts:trainingweb -- user jenkins --key-file ~/.ssh/DevOpsKeyPair"
+            sh "ansible-playbook deploy_trainingApp.yml -i inventories/dev/hosts -- user ec2-user --key-file ~/.ssh/DevOpsKeyPair"
+ 
         }
     }
 
