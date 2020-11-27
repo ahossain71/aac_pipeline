@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: trainingweb
  
   vars:
     http_port: 80
