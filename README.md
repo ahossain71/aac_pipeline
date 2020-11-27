@@ -1,1 +1,2 @@
-# trainingApps
+# trainingApp
+Cloud training Event repository
