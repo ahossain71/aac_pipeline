@@ -1,13 +1,11 @@
 ---
 - hosts: trainingweb
- 
   vars:
     http_port: 80
     max_client: 200
   remote_user: ec2-user
   become: yes
   become_user: ec2-user
-  
   
   tasks:
     - name: replace default index.html file
@@ -16,6 +14,6 @@
         dest: "/var/www/html"
         mode: 0644
   
-  handlers:
-    - name: check the status of httpd service ...
-      service: name="httpd" state="service_status"
+  #handlers:
+  #  - name: check the status of httpd service ...
+  #    service: name="httpd" state="service_status"
