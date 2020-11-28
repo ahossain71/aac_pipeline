@@ -12,7 +12,7 @@
       copy:
         src: "../../src/main/webapp/index.jsp"
         dest: "/var/www/html"
-        mode: 0644
+        mode: 0744
   
   #handlers:
   #  - name: check the status of httpd service ...
