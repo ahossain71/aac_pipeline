@@ -3,9 +3,9 @@
   vars:
     http_port: 80
     max_client: 200
-  remote_user: ec2-user
+  #remote_user: ec2-user
   become: yes
-  become_user: ec2-user
+  #become_user: ec2-user
   
   tasks:
     - name: replace default index.html file
@@ -14,7 +14,7 @@
         dest: "/var/www/html"
         owner: root
         group: root
-        mode: '0644'
+        mode: '0755'
    
   #handlers:
   #  - name: check the status of httpd service ...
