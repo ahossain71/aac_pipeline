@@ -10,10 +10,12 @@
   tasks:
     - name: replace default index.html file
       copy:
-        src: "../../src/main/webapp/index.jsp"
+        src: "../../src/main/webapp/*"
         dest: "/var/www/html"
-        mode: 0744
-  
+        owner: root
+        group: root
+        mode: '0644'
+   
   #handlers:
   #  - name: check the status of httpd service ...
   #    service: name="httpd" state="service_status"
