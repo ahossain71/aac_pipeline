@@ -33,9 +33,8 @@ pipeline {
         steps {
             //sh "ansible-playbook deploy_trainingApp.yml -i inventories/dev/hosts:trainingweb -- user jenkins --key-file ~/.ssh/DevOpsKeyPair"
             // sh "ansible-playbook ./ansible/playbooks/deploy_trainingApp.yml --user ec2-user --key-file ~/.ssh/DevOpsKeyPair"
-            sh "ansible-playbook ./ansible/playbooks/deploy_trainingApp.yml --user ec2-user"         
+            sh "ansible-playbook ./ansible/playbooks/deploy_trainingApp.yml --user ec2-user --key-file ~/.ssh/DevOpsKeyPair"   
          }
     }
-
   }// end stages
 }//end pipeline
