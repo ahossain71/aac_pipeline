@@ -34,7 +34,7 @@ pipeline {
             //sh "ansible-playbook deploy_trainingApp.yml -i inventories/dev/hosts:trainingweb -- user jenkins --key-file ~/.ssh/DevOpsKeyPair"
             //sh "ansible-playbook ./ansible/playbooks/deploy_trainingApp.yml --user ec2-user --key-file ~/.ssh/DevOpsKeyPair"
             //sh "ansible-playbook ./ansible/playbooks/deploy_trainingApp.yml --user ec2-user --key-file cff1d3fe-236f-43ca-8ff5-5f37ec63422d"   
-         ///}
+         //}
         //steps {
         //    withCredentials([sshUserPrivateKey(credentialsId: mySshKey, keyFileVariable: KEY')]) {
         //        sh "ssh -i ${KEY} 10.10.10.10 -C \'docker run -n my-nginx -p 8080:80 nginx\'"
