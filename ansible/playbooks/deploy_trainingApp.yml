@@ -10,7 +10,7 @@
   tasks:
     - name: replace default index.html file
       copy:
-        src: "$Workspace/src/main/webapp"
+        src: "$Workspace/src/main/webapp/*"
         dest: "/var/www/html"
         mode: 0644
   
