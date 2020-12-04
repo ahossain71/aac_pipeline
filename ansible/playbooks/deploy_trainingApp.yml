@@ -1,21 +1,24 @@
 ---
-- hosts: trainingweb
+- hosts: tomcat-nodes       # Inventory hosts group / server to act on
+  become: yes               # If to escalate privilege
+  become_method: sudo       # Set become method
+  remote_user: ec2-user         # Update username for remote server
+
   vars:
     http_port: 80
     max_client: 200
-  #remote_user: ec2-user
-  become: yes
-  #become_user: ec2-user
-  
+
+  roles:
+    - 
   tasks:
     - name: replace default index.html file
       copy:
-        src: "../../src/main/webapp/index.jsp"
-        dest: "/var/www/html"
-        owner: root
-        group: root
+        src: "../../target/training-basicwebserver-integration.war"
+        dest: "/usr/share/webapps"
+        owner: ec2-user
+        group: ec2-user
         mode: '0755'
-   
+  
   #handlers:
   #  - name: check the status of httpd service ...
   #    service: name="httpd" state="service_status"
