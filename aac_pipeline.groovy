@@ -6,12 +6,12 @@ pipeline {
        maven "Maven 3.6.3"
     }
   stages {
-      stage('checkout_application'){ 
+     /* stage('checkout_application'){ 
         steps {
           git branch: 'main', url: 'https://github.com/ahossain71/trainingApp.git'
           }
       }
-
+    */
       stage('Tools Init') {
         steps {
             script {
