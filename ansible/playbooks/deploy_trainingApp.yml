@@ -13,7 +13,7 @@
   tasks:
     - name: replace default index.html file
       copy:
-        src: "../../target/training-basicwebserver-integration.war"
+        src: "../../target/training-tomcatweb-integration.war"
         dest: "/usr/share/webapps"
         owner: ec2-user
         group: ec2-user
