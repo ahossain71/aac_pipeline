@@ -1,21 +1,25 @@
 ---
-- hosts: tomcat-nodes       # Inventory hosts group / server to act on
+- name: Tomcat deployment playbook
+  hosts: tomcat-nodes       # Inventory hosts group / server to act on
   become: yes               # If to escalate privilege
-  remote_user: root         # Update username for remote server
-
+  become_method: sudo       # Set become method
+  remote_user: ubuntu       # Update username for remote server
   vars:
+    tomcat_ver: 9.0.30                          # Tomcat version to install
+    #ui_manager_user: manager                    # User who can access the UI manager section only
+    #ui_manager_pass: PoshaBiral@2020            # UI manager user password
+    #ui_admin_username: admin                    # User who can access bpth manager and admin UI sections
+    #ui_admin_pass: PoshaBiral@2020              # UI admin password
     http_port: 80
     max_client: 200
 
-  roles:
-    - 
   tasks:
     - name: deoloy the .war file to the tomcat webapp folder
       copy:
         src: "../../target/training-tomcatweb-integration.war"
         dest: "/usr/share/webapp"
-        owner: root
-        group: root
+        owner: ubuntu
+        group: ubuntu
         mode: '0755'
   
   #handlers:
