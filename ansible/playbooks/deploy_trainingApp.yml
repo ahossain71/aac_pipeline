@@ -1,7 +1,7 @@
 ---
 - hosts: tomcat-nodes       # Inventory hosts group / server to act on
   become: yes               # If to escalate privilege
-  remote_user: ubuntu         # Update username for remote server
+  remote_user: root         # Update username for remote server
 
   vars:
     http_port: 80
@@ -10,12 +10,12 @@
   roles:
     - 
   tasks:
-    - name: replace default index.html file
+    - name: deoloy the .war file to the tomcat webapp folder
       copy:
         src: "../../target/training-tomcatweb-integration.war"
-        dest: "/usr/share/webapps"
-        owner: ubuntu
-        group: ubuntu
+        dest: "/usr/share/webapp"
+        owner: root
+        group: root
         mode: '0755'
   
   #handlers:
