@@ -14,10 +14,10 @@
     max_client: 200
 
   tasks:
-    - name: deoloy the .war file to the tomcat webapp folder
+    - name: deoloy the .war file to the tomcat webapps folder
       copy:
         src: "../../target/training-tomcatweb-integration.war"
-        dest: "/usr/share/webapps"
+        dest: "/usr/share/tomcat/webapps"
         owner: ubuntu
         group: ubuntu
         mode: '0755'
