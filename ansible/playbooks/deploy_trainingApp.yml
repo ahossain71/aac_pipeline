@@ -17,7 +17,7 @@
     - name: deoloy the .war file to the tomcat webapp folder
       copy:
         src: "../../target/training-tomcatweb-integration.war"
-        dest: "/usr/share/webapp"
+        dest: "/usr/share/webapps"
         owner: ubuntu
         group: ubuntu
         mode: '0755'
