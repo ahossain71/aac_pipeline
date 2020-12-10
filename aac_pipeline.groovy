@@ -3,7 +3,7 @@ pipeline {
   agent any
   tools
     {
-       maven "Maven 3.6.3"
+       maven "Maven 3.0.5"
     }
   stages {
      /* stage('checkout_application'){ 
