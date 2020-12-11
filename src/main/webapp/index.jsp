@@ -1,17 +1,15 @@
 <%@ page import="java.net.InetAddress" %>
-<%
-
-    InetAddress ia = InetAddress.getLocalHost();
-    out.println("<!-- hostname  " + ia.getHostName() +  " -->");
-%>
 <html>
 <head>
   <title>Echoing HTML Request Parameters</title>
 </head>
 <body>
   <h1> 
-    <marquee direction="left" behavior="scroll" style="color:blue;font-weight:bold;font-size:20px">Conratulations !!! You have successfully completed the Cloud Elevation Training for "Introduction to AWS Network Solution Archotecture and Getting Hands-On with DevSecops...See you at the next Training Session on Containerization with Kubernetes ....</marquee>
+    <marquee direction="left" behavior="scroll" style="color:maroon;font-weight:bold;font-size:20px">Conratulations !!! You have successfully completed the Cloud Elevation Training for "Introduction to AWS Network Solution Archotecture and Getting Hands-On with DevSecops...See you at the next Training Session on Containerization with Kubernetes ....</marquee>
   </h1>
+  <h3><% InetAddress ia = InetAddress.getLocalHost();
+    out.println("<!-- hostname  " + ia.getHostName() +  " -->");
+   %></h3>
   <h3>Choose an author:</h3>
   <form method="get">
     <input type="checkbox" name="author" value="Tan Ah Teck">Tan
