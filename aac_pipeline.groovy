@@ -6,7 +6,7 @@ pipeline {
        maven "Maven"
     }
   stages {
-     /* stage('checkout_application'){ 
+     /*stage('checkout_application'){ 
         steps {
           git branch: 'main', url: 'https://github.com/ahossain71/trainingApp.git'
           }
