@@ -31,8 +31,8 @@ pipeline {
         }
     stage('Ansible Deploy') {
         steps{
-             withCredentials([sshUserPrivateKey(credentialsId: '2be93d5b-70f9-4db2-adc3-f307b7b86c48', keyFileVariable: 'myKEY')]) {
-                sh 'ansible-playbook ./ansible/playbooks/deploy_trainingApp.yml --user ubuntu --key-file ${myKEY}'  
+             withCredentials([sshUserPrivateKey(credentialsId: '669f3c2b-55b1-4d3a-9255-7ad60413dc48', keyFileVariable: 'myKey')]) {
+                //sh 'ansible-playbook ./ansible/playbooks/deploy_trainingApp.yml --user ubuntu --key-file ${myKey}'  
             }//end withCredentials
       }//end steps
     }//end stage
