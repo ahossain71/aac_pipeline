@@ -8,7 +8,7 @@ pipeline {
   stages {
       stage('checkout_application'){ 
         steps {
-          git branch: 'main', url: 'https://github.com/ahossain71/trainingApp.git'
+          git branch: 'master', url: 'https://github.com/ahossain71/trainingApp.git'
           }
       }
       stage('Tools Init') {
