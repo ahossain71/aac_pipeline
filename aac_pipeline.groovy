@@ -33,7 +33,7 @@ pipeline {
                 //sh 'wget --no-check-certificate --content-disposition https://github.com/ahossain71/aac_pipeline/tree/main/ansible'
                 //sh 'curl -LJO https://github.com/ahossain71/aac_pipeline/tree/main/ansible'
                 sh 'wget -P /ansible/playbooks https://github.com/ahossain71/aac_pipeline/tree/main/ansible/playbooks/deploy_trainingApp.yml'
-                sh 'ansible-playbook /ansible/playbooks/deploy_trainingApp.yml --user ubuntu --key-file ${myTestKeyPair02}'  
+                sh 'ansible-playbook playbooks/deploy_trainingApp.yml --user ubuntu --key-file ${myTestKeyPair02}'  
             }//end withCredentials
       }//end steps
     }//end stage
