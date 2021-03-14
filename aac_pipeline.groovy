@@ -1,4 +1,4 @@
-// Declarative pipeline
+//Declarative pipeline
 pipeline {
   agent any
   tools
@@ -6,7 +6,34 @@ pipeline {
        maven "Maven"
     }
   stages {
+     stage('Setup parameters') {
+            steps {
+                script { 
+                    properties([
+                        parameters([
+                            choice(
+                                choices: ['trainingApp01', 'trainingApp02'], 
+                                name: 'APPLICATION_NAME'
+                              )
+                        ])
+                    ])
+                }//end scripts
+            }//end steps
+     }//end stage
       stage('checkout_application'){ 
+        when {
+                expression { 
+                   return params.APPLICATION_NAME == 'trainingApp01'
+                }
+            }
+        steps {
+          git branch: 'master', url: 'https://github.com/ahossain71/trainingApp.git'
+          }
+        when {
+                expression { 
+                   return params.APPLICATION_NAME == 'trainingApp02'
+                }
+            }
         steps {
           git branch: 'master', url: 'https://github.com/ahossain71/trainingApp.git'
           }
