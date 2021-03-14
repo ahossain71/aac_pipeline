@@ -6,9 +6,10 @@ pipeline {
        maven "Maven"
     }
   stages {
-      stage('checkout_TrainingApp'){ 
+      stage('checkout_TrainingApp') { 
         steps {
           git branch: 'master', url: 'https://github.com/ahossain71/trainingApp.git'
+         }
       }
       stage('Tools Init') {
         steps {
