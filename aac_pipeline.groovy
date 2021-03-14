@@ -25,8 +25,7 @@ pipeline {
           if (parameters.APPLICATION_NAME.equals('TrainingApp01')){
               git branch: 'master', url: 'https://github.com/ahossain71/trainingApp.git'
           }
-          else
-          if (parameters.APPLICATION_NAME.equals('TrainingApp02')){
+          else if (parameters.APPLICATION_NAME.equals('TrainingApp02')){
              git branch: 'master', url: 'https://github.com/ahossain71/trainingApp.git'
           }
       }
