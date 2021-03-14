@@ -22,11 +22,8 @@ pipeline {
      }//end stage
       stage('checkout_application'){ 
         steps {
-          if (parameters.APPLICATION_NAME.equals('TrainingApp01')){
+          if (parameters.APPLICATION_NAME.equals("TrainingApp01")) {
               git branch: 'master', url: 'https://github.com/ahossain71/trainingApp.git'
-          }
-          else if (parameters.APPLICATION_NAME.equals('TrainingApp02')){
-             git branch: 'master', url: 'https://github.com/ahossain71/trainingApp.git'
           }
       }
       stage('Tools Init') {
