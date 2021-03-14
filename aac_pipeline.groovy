@@ -6,35 +6,7 @@ pipeline {
        maven "Maven"
     }
   stages {
-     stage('Setup parameters') {
-            steps {
-                script { 
-                    properties([
-                        parameters([
-                            choice(
-                                choices: ['trainingApp01', 'trainingApp02'], 
-                                name: 'APPLICATION_NAME'
-                              )
-                        ])
-                    ])
-                }//end scripts
-            }//end steps
-     }//end stage
-      stage('checkout_TrainingApp01'){ 
-        when {
-                expression { 
-                   return parameters.APPLICATION_NAME == 'trainingApp01'
-                }
-            }
-        steps {
-          git branch: 'master', url: 'https://github.com/ahossain71/trainingApp.git'
-      }
-      stage('checkout_TrainingApp02'){ 
-        when {
-                expression { 
-                   return params.APPLICATION_NAME == 'TrainingApp02'
-                }
-            }
+      stage('checkout_TrainingApp'){ 
         steps {
           git branch: 'master', url: 'https://github.com/ahossain71/trainingApp.git'
       }
