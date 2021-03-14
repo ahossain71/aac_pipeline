@@ -20,11 +20,23 @@ pipeline {
                 }//end scripts
             }//end steps
      }//end stage
-      stage('checkout_application'){ 
+      stage('checkout_TrainingApp01'){ 
+        when {
+                expression { 
+                   return params.APPLICATION_NAME == 'TrainingApp01'
+                }
+            }
         steps {
-          if (parameters.APPLICATION_NAME.equals("TrainingApp01")) {
-              git branch: 'master', url: 'https://github.com/ahossain71/trainingApp.git'
-          }
+          git branch: 'master', url: 'https://github.com/ahossain71/trainingApp.git'
+      }
+      stage('checkout_TrainingApp02'){ 
+        when {
+                expression { 
+                   return params.APPLICATION_NAME == 'TrainingApp02'
+                }
+            }
+        steps {
+          git branch: 'master', url: 'https://github.com/ahossain71/trainingApp.git'
       }
       stage('Tools Init') {
         steps {
