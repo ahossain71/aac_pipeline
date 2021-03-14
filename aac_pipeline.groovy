@@ -27,11 +27,11 @@ pipeline {
               sh 'mvn package'             
           }
         }
-    stage('Copy build to S3') {
-        steps{
-             sh 'aws s3 cp ./target/training-tomcatweb-integration.war s3://application-pkgs/trainingApp/'
-         }//end steps
-    }//end stage
+   // stage('Copy build to S3') {
+   //     steps{
+   //          sh 'aws s3 cp ./target/training-tomcatweb-integration.war s3://application-pkgs/trainingApp/'
+   //      }//end steps
+   // }//end stage
     stage('checkout_training_playbooks'){ 
         steps {
           git branch: 'main', url: 'https://github.com/ahossain71/training_playbooks.git'
