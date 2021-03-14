@@ -27,7 +27,7 @@ pipeline {
               sh 'mvn package'             
           }
         }
-    stage{'Copy build to S3'}{
+    stage('Copy build to S3') {
         steps{
           withCredentials([sshUserPrivateKey(credentialsId: 'a59a13e3-8e2f-4920-83c9-a49b576e5d58', keyFileVariable: 'myTestKeyPair02')]) {
             sh 'aws s3 cp ./traimiomg-tomcat-integration.war s3://application-pkgs/trainingApp/'
