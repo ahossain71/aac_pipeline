@@ -21,21 +21,13 @@ pipeline {
             }//end steps
      }//end stage
       stage('checkout_application'){ 
-        when {
-                expression { 
-                   return params.APPLICATION_NAME == 'trainingApp01'
-                }
-            }
         steps {
-          git branch: 'master', url: 'https://github.com/ahossain71/trainingApp.git'
+          if (parameters.APPLICATION_NAME==('TrainingApp01')){
+              git branch: 'master', url: 'https://github.com/ahossain71/trainingApp.git'
           }
-        when {
-                expression { 
-                   return params.APPLICATION_NAME == 'trainingApp02'
-                }
-            }
-        steps {
-          git branch: 'master', url: 'https://github.com/ahossain71/trainingApp.git'
+          else
+          if (parameters.APPLICATION_NAME==('TrainingApp02')){
+             git branch: 'master', url: 'https://github.com/ahossain71/trainingApp.git'
           }
       }
       stage('Tools Init') {
