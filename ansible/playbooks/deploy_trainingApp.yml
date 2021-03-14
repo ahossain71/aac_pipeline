@@ -17,7 +17,7 @@
     - name: deoloy the .war file to the tomcat webapps folder
       copy:
         #src: "../../target/training-tomcatweb-integration.war"
-        src: "s3://application-pkgs/trainingApp/target/training-tomcatweb-integration.war"
+        src: "s3://application-pkgs/trainingApp/training-tomcatweb-integration.war"
         dest: "/usr/share/tomcat/webapps"
         owner: ubuntu
         group: ubuntu
