@@ -23,7 +23,7 @@ pipeline {
       stage('checkout_TrainingApp01'){ 
         when {
                 expression { 
-                   return params.APPLICATION_NAME == 'TrainingApp01'
+                   return parameters.APPLICATION_NAME == 'trainingApp01'
                 }
             }
         steps {
