@@ -1,4 +1,4 @@
-//Declarative pipeline
+// Declarative pipeline
 pipeline {
   agent any
   tools
@@ -29,10 +29,11 @@ pipeline {
         }
     stage{'Copy build to S3'}{
         steps{
-          sh 'aws s3 cp ./traimiomg-tomcat-integration.war s3://application-pkgs/trainingApp/'
-        }
-
-    }
+          withCredentials([sshUserPrivateKey(credentialsId: 'a59a13e3-8e2f-4920-83c9-a49b576e5d58', keyFileVariable: 'myTestKeyPair02')]) {
+            sh 'aws s3 cp ./traimiomg-tomcat-integration.war s3://application-pkgs/trainingApp/'
+           }//end withCredentials
+        }//end steps
+    }//end stage
     //stage('Ansible Deploy') {
     //    steps{
     //         withCredentials([sshUserPrivateKey(credentialsId: 'a59a13e3-8e2f-4920-83c9-a49b576e5d58', keyFileVariable: 'myTestKeyPair02')]) {
@@ -41,7 +42,7 @@ pipeline {
                 //sh 'wget  https://github.com/ahossain71/aac_pipeline/tree/main/ansible/playbooks/deploy_trainingApp.yml'
     //            sh 'ansible-playbook deploy_trainingApp.yml --user ubuntu --key-file ${myTestKeyPair02}'  
     //        }//end withCredentials
-      }//end steps
+    // }//end steps
     //}//end stage
   }// end stages
 }//end pipeline
